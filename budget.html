@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TravelNest | Budget Planner</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script defer src="js/data.js"></script>
+        <script defer src="js/budget.js"></script>
+    </head> 
+    
+    
+    <body>
+        <nav class="navbar">
+            <div class="logo">TravelNest</div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="budget.html">Budget Planner</a></li>
+                <li><a href="generator.html">Trip Generator</a></li>
+                <li><a href="mood.html">Travel Mood</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </nav>
+
+        <section class="page-header">
+            <h1>Trip Budget Planner</h1>
+            <p>Plan your travel expenses before you go</p>
+        </section>
+
+        <section class="budget-section">
+            
+            <div class="budget-container">
+                
+                <div class="budget-form">
+                    <h2 class="section-title">Plan Your Trip</h2>
+                    <div class="form-group">
+                        <label>Destination</label>
+                        <select id="budget-destination">
+                            <option value="">Select a destination</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Number of Travellers</label>
+                        <input type="number" id="travellers" min="1" max="20" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Daily Hotel Budget (USD)</label>
+                        <input type="number" id="hotel" min="0" value="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Daily Food Budget (USD)</label>
+                        <input type="number" id="food" min="0" value="30">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Activities Budget (USD)</label>
+                        <input type="number" id="activities" min="0" value="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Flight Cost (USD)</label>
+                        <input type="number" id="flight" min="0" value="500">
+                    </div>
+
+                    <button class="btn" id="calculate-btn">Calculate Budget</button>
+                </div>
+
+                <div class="budget-results" id="budget-results">
+                    <h2 class="section-title">Your Estimate</h2>
+                    <p class="section-subtitle">Fill in the form and click calculate</p>
+                    <div id="results-content"></div>
+                </div>
+            
+            </div>
+        
+        </section>
+
+        <footer>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="budget.html">Budget</a>
+                <a href="generator.html">Generator</a>
+                <a href="mood.html">Mood</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+
+            <div class="newsletter">
+                <input type="email" id="newsletter-input" placeholder="Enter your email">
+                <button id="newsletter-btn">Subscribe</button>
+            </div>
+
+            <p>&copy; 2026 TravelNest. All rights reserved.</p>
+        </footer>
+
+    
+    </body>
+
+
+</html>

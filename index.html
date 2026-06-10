@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="TravelNest - Explore destination, plan trips and manage travel inspirations">
+        <title>TravelNest | Home</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script defer src="js/data.js"></script>
+        <script defer src="js/main.js"></script>
+    </head>
+    
+    
+    <body>
+        <!--Navigation-->
+        <nav class="navbar">
+            <div class="logo">TravelNest</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="budget.html">Budget Planner</a></li>
+                <li><a href="generator.html">Trip Generator</a></li>
+                <li><a href="mood.html">Travel Mood</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <!--Hero Section-->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>The World is Your Story...</h1>
+                <p id="quote">Loading...</p>
+                <a href="destinations.html" class="btn">Explore Destinations</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero.jpg" alt="Travel destination">
+            </div>
+        </section>
+        
+        <!--Destination of the day-->
+        <section class="dotd">
+            <h2>Destination of the Day</h2>
+            <div id="dotd-card"></div>
+        </section>
+
+        <!--Featured destinations-->
+        <section class="cards-section">
+            <h2 class="section-title">Featured Destinations</h2>
+            <p class="section-subtitle">Handpicked places to inspire your next journey</p>
+            <div class="cards-grid" id="featured-grid"></div>
+        </section>
+
+        <!--Footer-->
+        <footer>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="budget.html">Budget</a>
+                <a href="generator.html">Generator</a>
+                <a href="mood.html">Mood</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+            <div class="newsletter">
+                <input type="email" id="newsletter-input" placeholder="Enter your email">
+                <button id="newsletter-btn">Subscribe</button>
+            </div>
+            <p>&copy; 2026 TravelNest. All rights reserved.</p>
+        </footer>
+    
+    </body>
+    
+
+
+
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TravelNest | Trip Generator</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script defer src="js/data.js"></script>
+        <script defer src="js/generator.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="logo">TravelNest</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="generator.html">Trip Generator</a></li>
+                <li><a href="mood.html">Travel Mood</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <section class="page-header">
+            <h1>Trip Generator</h1>
+            <p>Answer a few questions and we'll find your perfect destination</p>
+        </section>
+
+        <section class="budget-section">
+            <div class="budget-container">
+                <div class="budget-form">
+                    <h2 class="section-title">Your Preference</h2>
+                    <div class="form-group">
+                        <label>Preferred Region</label>
+                        <select id="gen-region">
+                            <option value="all">Anywhere</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="africa">Africa</option>
+                            <option value="americas">Americas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Trip Type</label>
+                        <select id="gen-type">
+                            <option value="all">Any Type</option>
+                            <option value="nature">Nature</option>
+                            <option value="cultural">Cultural</option>
+                            <option value="adventure">Adventure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Budget Level</label>
+                        <select id="gen-budget">
+                            <option value="all">Any Budget</option>
+                            <option value="low">Budget ($)</option>
+                            <option value="moderate">Mid-range ($$)</option>
+                            <option value="high">Luxury ($$$)</option>
+                        </select>
+                    </div>
+                    <button class="btn" id="generate-btn">Generator Trip</button>
+                </div>
+                <div class="budget-results" id="gen-result">
+                    <h2 class="section-title">Your Match</h2>
+                    <p class="section-subtitle">Fill in your Preference and generator</p>
+                    <div id="gen-card"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="budget.html">Budget</a>
+                <a href="generator.html">Generator</a>
+                <a href="mood.html">Mood</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+            <div class="newsletter">
+                <input type="email" id="newsletter-input" placeholder="Enter your email">
+                <button id="newsletter-btn">Subscribe</button>
+            </div>
+            <p>&copy; 2026 TravelNest. All rights reserved.</p>
+        </footer>
+
+    </body>
+
+
+
+</html>

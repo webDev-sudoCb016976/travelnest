@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TravelNest | Travel Mood</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script defer src="js/data.js"></script>
+        <script defer src="js/mood.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="logo">TravelNest</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="budget.html">Budget Planner</a></li>
+                <li><a href="generator.html">Trip Generator</a></li>
+                <li><a href="mood.html">Travel Mood</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <section class="page-header">
+            <h1>Travel Mood</h1>
+            <p>Find destinations that match how you feel</p>
+        </section>
+
+        <section class="mood-section">
+            <h2 class="section-title">How are you feeling today?</h2>
+            <p class="section-subtitle">Pick a mood and discover where to go</p>
+            <div class="mood-grid">
+                <button class="mood-btn" data-mood="adventurous">🏔️ Adventurous</button>
+                <button class="mood-btn" data-mood="relaxed">🏖️ Relaxed</button>
+                <button class="mood-btn" data-mood="curious">🏛️ Curious</button>
+                <button class="mood-btn" data-mood="wild">🦁 Wild</button>
+                <button class="mood-btn" data-mood="romantic">🌹 Romantic</button>
+            </div>
+            <div id="mood-results"></div>
+        </section>
+
+        <footer>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="budget.html">Budget</a>
+                <a href="generator.html">Generator</a>
+                <a href="mood.html">Mood</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+            <div class="newsletter">
+                <input type="email" id="newsletter-input" placeholder="Enter your email">
+                <button id="newsletter-btn">Subscribe</button>
+            </div>
+            <p>&copy; 2026 TravelNest. All rights reserved.</p>
+        </footer>
+
+     </body>
+
+
+</html>
