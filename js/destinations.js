@@ -1,7 +1,5 @@
-
 /* Display destinations */
 const grid = document.getElementById('destinations-grid');
-
 function displayDestinations(list) {
     grid.innerHTML = '';
     list.forEach(function(dest) {
@@ -16,69 +14,47 @@ function displayDestinations(list) {
                 <br>
                 <small>${dest.cost} . ${dest.days} days</small>
             </div>
-            
             `;
             grid.appendChild(card);
             card.addEventListener('click', function() {
                 openModal(dest);
-
             });
-
     });
-
 }
-
 displayDestinations(destinations);
 
 /* Filters */
 let activeRegion = 'all';
 let activeType = 'all';
-
 function applyFilters() {
     let filtered = destinations;
-
     if (activeRegion !== 'all') {
         filtered = filtered.filter(function(d) {
             return d.region === activeRegion;
         });
-
     }
-
     if (activeType !== 'all') {
         filtered = filtered.filter(function(d) {
             return d.type === activeType;
         });
     }
     displayDestinations(filtered);
-
 }
-
 const filterBtns = document.querySelectorAll('.filter-btn');
-
 filterBtns.forEach(function(btn){
     btn.addEventListener('click', function() {
         const filter = btn.dataset.filter;
         const value = btn.dataset.value;
-
-        /* Update active button in this group */
         document.querySelectorAll(`[data-filter="${filter}"]`).forEach(function(b) {
             b.classList.remove('active');
-        
         });
         btn.classList.add('active');
-
-        /* Update active filter */
         if (filter === 'region') activeRegion = value;
         if (filter === 'type') activeType = value;
-
         applyFilters();
-
     });
-
 });
 
-
-    
 // ── MODAL ──
 const overlay = document.createElement('div');
 overlay.className = 'modal-overlay';
@@ -90,7 +66,13 @@ overlay.innerHTML = `
 `;
 document.body.appendChild(overlay);
 
+let currentAudio = null;
+
 function openModal(dest) {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
     document.getElementById('modal-content').innerHTML = `
         <img src="${dest.image}" alt="${dest.name}" style="width:100%; height:220px; object-fit:cover; margin-bottom:24px;">
         <div class="modal-emoji">${dest.emoji}</div>
@@ -103,20 +85,31 @@ function openModal(dest) {
                 ${dest.attractions.map(a => `<li>${a}</li>`).join('')}
             </ul>
         </div>
-
         <div class="modal-meta">
             <span>⏱ ${dest.days} days recommended</span>
             <span>💰 ${dest.cost}</span>
         </div>
+        <div class="modal-audio">
+            <audio controls loop src="${dest.audio}">
+                Your browser does not support audio.
+            </audio>
+        </div>
     `;
+    currentAudio = new Audio(dest.audio);
+    currentAudio.loop = true;
+    currentAudio.volume = 0.4;
+    currentAudio.play();
     overlay.classList.add('open');
-
 }
 
 overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) overlay.classList.remove('open');
+    if (e.target === overlay) {
+        if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; }
+        overlay.classList.remove('open');
+    }
 });
 
 document.querySelector('.modal-close').addEventListener('click', function() {
+    if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; }
     overlay.classList.remove('open');
 });
